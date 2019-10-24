@@ -56,3 +56,14 @@ clf = clf.fit(features_, labels_)
 clf.predict([[150, 0]]) # returns 1
 
 # TODO: Create a new classifier for a new problem just by changing the training data
+
+feature_cars = [[300, 2], [450, 2], [200, 8], [150, 9]]
+# 0 = sports-car
+# 1 = minivan
+label_cars = [0, 0, 1, 1]
+
+clf_cars = clf.fit(feature_cars, label_cars)
+clf_cars.predict([[500, 2]]) # 0
+clf_cars.predict([[200, 1]]) # 0
+clf_cars.predict([[200, 2]]) # 0
+clf_cars.predict([[200, 9]]) # 1
